@@ -15,7 +15,7 @@ response = clientSocket.recv(1024)
 print(response.decode())
 
 while True:
-    option = input('Choose mathematical function, [A]-Logarithmic, [B]-Square Root, [C]-Exponential or [Q] to quit: ')
+    option = input('Choose mathematical function, A -Logarithmic, B -Square Root, C -Exponential or Q to quit: ')
 
     if option == 'A' or option == 'B' or option == 'C':
         value = input("Enter a value: ")
@@ -28,7 +28,7 @@ while True:
         print("Quiting app.")
         clientSocket.send(str.encode(option))
         sys.exit()
-
+        
     else:
         print("Invalid input! Enter only A,B,C")
         print("Please try again.")
