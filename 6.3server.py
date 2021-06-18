@@ -12,17 +12,17 @@ nok_message = 'HTTP/1.0 404 Not Found\n\n'
 def process_start(s_sock):
     s_sock.send(str.encode("***Welcome to Online Calculator*** !!!\n"))
     while True:
-        data = s_sock.recv(2048).decode("utf-8").split(":")
+        pilihan = s_sock.recv(2048).decode("utf-8").split(":")
 
-        if data[0] == "A":
-            result = math.log(float(data[1]))
-        elif data[0] == "B":
-            result = math.sqrt(float(data[1]))
-        elif data[0] == "C":
-            result = math.exp(float(data[1]))
-        elif data[0] not in 'ABC':
+        if pilihan[0] == "A":
+            result = math.log(float(pilihan[1]))
+        elif pilihan[0] == "B":
+            result = math.sqrt(float(pilihan[1]))
+        elif pilihan[0] == "C":
+            result = math.exp(float(pilihan[1]))
+        elif pilihan[0] not in 'ABC':
             result = math.exp(float(0))
-        elif data[0] == "Q":
+        elif pilihan[0] == "Q":
             break
 
         s_sock.sendall(str.encode(str(result)))
