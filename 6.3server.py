@@ -10,7 +10,7 @@ nok_message = 'HTTP/1.0 404 Not Found\n\n'
 
 
 def process_start(s_sock):
-    s_sock.send(str.encode("***Welcome to Online Calculator*** !!!\n"))
+    s_sock.send(str.encode("***Welcome to Online Calculator***\n"))
     while True:
         pilihan = s_sock.recv(2048).decode("utf-8").split(":")
 
